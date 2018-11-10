@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RemoteHome</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body data-ma-theme="blue">
+<!--     <%= render(:partial => "layouts/page_loader") %> -->
+    <%= render(:partial => "layouts/alerts") %>
+    <%= yield %>
+    <%= render(:partial => "layouts/browser_warnings") %>
+    </body>
+</html>

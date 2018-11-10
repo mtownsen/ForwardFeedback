@@ -1,0 +1,32 @@
+<div class="content__inner">
+    <div class="toolbar">
+      <nav class="toolbar__nav">
+        <%= link_to 'Users', employees_path, class: 'active' %>
+        <%= link_to 'Groups', groups_path %>
+      </nav>
+      <div class="actions">
+          <i class="actions__item zmdi zmdi-search" data-ma-action="toolbar-search-open"></i>
+          <%= link_to '', new_employee_path, class: 'actions__item zmdi zmdi-plus hidden-xs-down' %>
+      </div>
+      <div class="toolbar__search">
+        <input type="text" placeholder="Search...">
+        <i class="toolbar__search__close zmdi zmdi-long-arrow-left" data-ma-action="toolbar-search-close"></i>
+      </div>
+    </div>
+
+    <div class="contacts row">
+        <% @employees.each do |employee| %>
+            <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
+                <div class="contacts__item">
+                    <%= link_to employee_path(employee), class: 'contacts__img' do %>
+                      <img src="demo/img/contacts/<%= employee.id %>.jpg" alt="">
+                    <% end %>
+                    <div class="contacts__info">
+                        <strong><%= employee.name %></strong>
+                        <small><%= employee.email %></small>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
